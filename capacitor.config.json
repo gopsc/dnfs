@@ -1,0 +1,15 @@
+{
+  "appId": "me.qsont.dnfs",
+  "appName": "DNFS 树状笔记",
+  "webDir": "mobile-web",
+  "server": {
+    "url": "https://qsont.me"
+  },
+  "android": {
+    "path": "../dnfs.android",
+    "allowMixedContent": true
+  },
+  "ios": {
+    "allowsLinkPreview": false
+  }
+}

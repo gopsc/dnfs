@@ -1,11 +1,17 @@
 {
   "name": "dnfs",
   "version": "1.0.0",
-  "description": "DNFS 树状笔记桌面客户端（Electron）",
+  "description": "DNFS 树状笔记客户端（Electron 桌面 + Capacitor 移动端）",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "electron . --dev"
+    "dev": "electron . --dev",
+    "dist": "electron-builder --win",
+    "mobile:sync": "npx cap sync",
+    "mobile:android": "npx cap open android",
+    "mobile:ios": "npx cap open ios",
+    "mobile:build:android": "npx cap sync android && cd ../dnfs.android && gradlew assembleDebug",
+    "mobile:build:ios": "npx cap sync ios"
   },
   "keywords": [
     "dnfs",
@@ -14,7 +20,39 @@
   ],
   "author": "",
   "license": "ISC",
+  "build": {
+    "appId": "me.qsont.dnfs",
+    "productName": "DNFS",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "public/**/*"
+    ],
+    "win": {
+      "icon": "public/favicon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "DNFS 树状笔记"
+    }
+  },
   "devDependencies": {
-    "electron": "^33.0.0"
+    "electron": "^33.0.0",
+    "electron-builder": "^26.15.3",
+    "sharp": "^0.35.5"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3"
   }
 }
