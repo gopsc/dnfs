@@ -30,3 +30,6 @@ npm run dev        # 开发模式（传 --dev，可自行扩展 DevTools 等逻�
 ## 打包（可选）
 
 后续可接入 `electron-builder` 生成 Linux / Windows / macOS 安装包。
+## License
+
+本项目采用 [ISC License](LICENSE)。
