@@ -68,8 +68,33 @@ body::after {
 
 /* ===== 节点编辑卡：品牌渐变顶条 + 聚焦光环 ===== */
 .node-form {
-    position: relative;
+    position: relative !important;
+    z-index: 2147483647 !important;
+    isolation: isolate;
     overflow: hidden;
+    pointer-events: auto !important;
+    visibility: visible !important;
+}
+.node-form #input-note-title,
+.node-form #input-note-content,
+.node-form #sp-type,
+.node-form #sp-file,
+.node-form .form-actions button {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+.node-form #input-note-title,
+.node-form #input-note-content {
+    cursor: text !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+}
+.node-form::before,
+.node-form::after {
+    pointer-events: none !important;
 }
 .node-form::before {
     content: "";
