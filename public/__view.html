@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>树菜单 · 文件浏览</title>
+    <link rel="stylesheet" href="/css/view.css">
+</head>
+<body>
+    <header class="header">
+        <h1>📁 树菜单 · 文件浏览</h1>
+        <nav class="header-actions">
+            <a href="/" title="根目录">🏠</a>
+            <a href="#" id="btnRefresh" title="刷新">🔄</a>
+        </nav>
+    </header>
+
+    <nav class="breadcrumb" id="breadcrumb">
+        <a href="/">根目录</a>
+    </nav>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索文件…（快捷键 / 或 Ctrl+F）" autocomplete="off">
+    </div>
+
+    <div class="stats">
+        <span>📊 共 <span id="totalItems">0</span> 项</span>
+        <span>📁 <span id="totalDirs">0</span></span>
+        <span>📄 <span id="totalFiles">0</span></span>
+        <span>🎬 <span id="totalVideos">0</span></span>
+        <span>🎵 <span id="totalAudios">0</span></span>
+    </div>
+
+    <main class="container">
+        <div class="loading" id="loading">
+            <span class="spinner">⏳</span>
+            <div>加载中...</div>
+        </div>
+        <div id="fileList" class="file-grid"></div>
+        <div class="empty" id="empty" style="display:none;">
+            <span class="icon">📭</span>
+            <div>此目录为空</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">蜀ICP备2024107064号-2</a>
+    </footer>
+
+    <script src="/js/validation.js"></script>
+    <script src="/js/view.js"></script>
+</body>
+</html>
